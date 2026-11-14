@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>PUT Method Example</h2>
+
+<button onclick="updateData()">Update Data</button>
+
+<p id="result"></p>
+
+<script>
+function updateData() {
+    fetch('/update', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name: 'Nilam' })
+    })
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('result').innerText = data;
+    });
+}
+</script>
+
+</body>
+</html>
